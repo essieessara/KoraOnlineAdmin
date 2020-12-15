@@ -1,0 +1,81 @@
+﻿@model KoraOnlineAdmin.Models.Match
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Match</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MatchId" class="control-label"></label>
+                <input asp-for="MatchId" class="form-control" />
+                <span asp-validation-for="MatchId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MatchDate" class="control-label"></label>
+                <input asp-for="MatchDate" class="form-control" />
+                <span asp-validation-for="MatchDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MatchTime" class="control-label"></label>
+                <input asp-for="MatchTime" class="form-control" />
+                <span asp-validation-for="MatchTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MatchStatus" class="control-label"></label>
+                <input asp-for="MatchStatus" class="form-control" />
+                <span asp-validation-for="MatchStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StaduimId" class="control-label"></label>
+                <select asp-for="StaduimId" class ="form-control" asp-items="ViewBag.StaduimId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="LeagueId" class="control-label"></label>
+                <select asp-for="LeagueId" class ="form-control" asp-items="ViewBag.LeagueId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="MatchTeamName1" class="control-label"></label>
+                <input asp-for="MatchTeamName1" class="form-control" />
+                <span asp-validation-for="MatchTeamName1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MatchTeamName2" class="control-label"></label>
+                <input asp-for="MatchTeamName2" class="form-control" />
+                <span asp-validation-for="MatchTeamName2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MatchWeek" class="control-label"></label>
+                <input asp-for="MatchWeek" class="form-control" />
+                <span asp-validation-for="MatchWeek" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MatchTeamResult1" class="control-label"></label>
+                <input asp-for="MatchTeamResult1" class="form-control" />
+                <span asp-validation-for="MatchTeamResult1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MatchTeamResult2" class="control-label"></label>
+                <input asp-for="MatchTeamResult2" class="form-control" />
+                <span asp-validation-for="MatchTeamResult2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

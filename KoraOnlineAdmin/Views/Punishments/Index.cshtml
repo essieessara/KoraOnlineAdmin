@@ -1,0 +1,41 @@
+﻿@model IEnumerable<KoraOnlineAdmin.Models.Punishment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PunishType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PunishType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Player.PlayerId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PunishId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PunishId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PunishId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
