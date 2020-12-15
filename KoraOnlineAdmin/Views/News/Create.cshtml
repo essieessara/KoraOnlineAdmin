@@ -1,0 +1,87 @@
+﻿@model KoraOnlineAdmin.Models.News
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>News</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NewsTitle" class="control-label"></label>
+                <input asp-for="NewsTitle" class="form-control" />
+                <span asp-validation-for="NewsTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewsDate" class="control-label"></label>
+                <input asp-for="NewsDate" class="form-control" />
+                <span asp-validation-for="NewsDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewsTime" class="control-label"></label>
+                <input asp-for="NewsTime" class="form-control" />
+                <span asp-validation-for="NewsTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewsCategoryId" class="control-label"></label>
+                <select asp-for="NewsCategoryId" class ="form-control" asp-items="ViewBag.NewsCategoryId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewsImage" class="control-label"></label>
+                <input asp-for="NewsImage" class="form-control" />
+                <span asp-validation-for="NewsImage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewsWriter" class="control-label"></label>
+                <input asp-for="NewsWriter" class="form-control" />
+                <span asp-validation-for="NewsWriter" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewsDescription" class="control-label"></label>
+                <input asp-for="NewsDescription" class="form-control" />
+                <span asp-validation-for="NewsDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoachId" class="control-label"></label>
+                <input asp-for="CoachId" class="form-control" />
+                <span asp-validation-for="CoachId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LeagueId" class="control-label"></label>
+                <select asp-for="LeagueId" class ="form-control" asp-items="ViewBag.LeagueId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamId" class="control-label"></label>
+                <select asp-for="TeamId" class ="form-control" asp-items="ViewBag.TeamId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="StadId" class="control-label"></label>
+                <select asp-for="StadId" class ="form-control" asp-items="ViewBag.StadId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="MatchId" class="control-label"></label>
+                <select asp-for="MatchId" class ="form-control" asp-items="ViewBag.MatchId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlayerId" class="control-label"></label>
+                <select asp-for="PlayerId" class ="form-control" asp-items="ViewBag.PlayerId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

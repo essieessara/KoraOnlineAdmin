@@ -1,0 +1,107 @@
+﻿@model IEnumerable<KoraOnlineAdmin.Models.News>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NewsTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NewsDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NewsTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NewsImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NewsWriter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NewsDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CoachId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.League)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Match)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NewsCategory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Player)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Team)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewsTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewsDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewsTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewsImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewsWriter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewsDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CoachId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.League.LeagueId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Match.MatchId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewsCategory.CategoryId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Player.PlayerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stad.StadiumId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Team.TeamId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.NewsId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.NewsId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.NewsId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

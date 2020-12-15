@@ -1,0 +1,96 @@
+﻿@model KoraOnlineAdmin.Models.News
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>News</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NewsTitle)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NewsTitle)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NewsDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NewsDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NewsTime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NewsTime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NewsImage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NewsImage)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NewsWriter)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NewsWriter)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NewsDescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NewsDescription)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CoachId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CoachId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.League)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.League.LeagueId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Match)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Match.MatchId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NewsCategory)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NewsCategory.CategoryId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Player)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Player.PlayerId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Stad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Stad.StadiumId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Team)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Team.TeamId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.NewsId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
