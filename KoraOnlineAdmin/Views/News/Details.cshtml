@@ -4,11 +4,9 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
-
+<h1>News Details</h1>
+<hr />
 <div>
-    <h4>News</h4>
-    <hr />
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.NewsTitle)
@@ -22,12 +20,12 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.NewsDate)
         </dd>
-        <dt class = "col-sm-2">
+        @*<dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.NewsTime)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.NewsTime)
-        </dd>
+        </dd>*@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.NewsImage)
         </dt>
@@ -46,7 +44,7 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.NewsDescription)
         </dd>
-        <dt class = "col-sm-2">
+        @*<dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CoachId)
         </dt>
         <dd class = "col-sm-10">
@@ -63,14 +61,14 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Match.MatchId)
-        </dd>
+        </dd>*@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.NewsCategory)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.NewsCategory.CategoryId)
         </dd>
-        <dt class = "col-sm-2">
+        @*<dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Player)
         </dt>
         <dd class = "col-sm-10">
@@ -87,10 +85,10 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Team.TeamId)
-        </dd>
+        </dd>*@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.NewsId">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model.NewsId" class="btn btn-primary">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

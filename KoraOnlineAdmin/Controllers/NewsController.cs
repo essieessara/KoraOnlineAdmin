@@ -99,7 +99,7 @@ namespace KoraOnlineAdmin.Controllers
             }
             ViewData["LeagueId"] = new SelectList(_context.Leagues, "LeagueId", "LeagueId", news.LeagueId);
             ViewData["MatchId"] = new SelectList(_context.Matches, "MatchId", "MatchId", news.MatchId);
-            ViewData["NewsCategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId", news.NewsCategoryId);
+            ViewData["NewsCategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryName", news.NewsCategoryId);
             ViewData["PlayerId"] = new SelectList(_context.Players, "PlayerId", "PlayerId", news.PlayerId);
             ViewData["StadId"] = new SelectList(_context.Stadia, "StadiumId", "StadiumId", news.StadId);
             ViewData["TeamId"] = new SelectList(_context.Teams, "TeamId", "TeamId", news.TeamId);
