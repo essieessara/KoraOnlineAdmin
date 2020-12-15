@@ -5,12 +5,12 @@
 }
 
 <h1>Kora Online News</h1>
-
+<hr />
 <p>
     <a asp-action="Create" class="btn btn-primary">Add News</a>
 </p>
-<table class="table">
-    <thead>
+<table class="table table-bordered table-hover">
+    <thead class="thead-dark">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.NewsTitle)
