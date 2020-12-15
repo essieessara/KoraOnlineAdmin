@@ -4,44 +4,51 @@
     ViewData["Title"] = "Index";
 }
 
+@*to change the page font familly*@
+@*<div style="font-family:Arial"></div>*@
+
 <h1>Kora Online News</h1>
 <hr />
 <p>
     <a asp-action="Create" class="btn btn-primary">Add News</a>
 </p>
-<table class="table table-bordered table-hover">
-    <thead class="thead-dark">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.NewsTitle)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NewsDate)
-            </th>
-            @*<th>
-                @Html.DisplayNameFor(model => model.NewsCategory)
-            </th>*@
-            <th>Options</th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NewsTitle)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NewsDate)
-            </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.NewsCategory.CategoryId)
-            </td>*@
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.NewsId" class="btn btn-primary">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.NewsId"class="btn btn-info">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.NewsId" class="btn btn-danger">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="table-responsive">
+
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NewsTitle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NewsDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NewsCategory.CategoryName)
+                </th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NewsTitle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NewsDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NewsCategory.CategoryName)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.NewsId" class="btn btn-primary">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.NewsId" class="btn btn-info">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.NewsId" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
