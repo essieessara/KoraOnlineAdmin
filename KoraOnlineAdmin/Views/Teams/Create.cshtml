@@ -1,0 +1,86 @@
+﻿@model KoraOnlineAdmin.Models.Team
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Team</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TeamId" class="control-label"></label>
+                <input asp-for="TeamId" class="form-control" />
+                <span asp-validation-for="TeamId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamName" class="control-label"></label>
+                <input asp-for="TeamName" class="form-control" />
+                <span asp-validation-for="TeamName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamMatchPlayed" class="control-label"></label>
+                <input asp-for="TeamMatchPlayed" class="form-control" />
+                <span asp-validation-for="TeamMatchPlayed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamWon" class="control-label"></label>
+                <input asp-for="TeamWon" class="form-control" />
+                <span asp-validation-for="TeamWon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamDraw" class="control-label"></label>
+                <input asp-for="TeamDraw" class="form-control" />
+                <span asp-validation-for="TeamDraw" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamLost" class="control-label"></label>
+                <input asp-for="TeamLost" class="form-control" />
+                <span asp-validation-for="TeamLost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamGoalFor" class="control-label"></label>
+                <input asp-for="TeamGoalFor" class="form-control" />
+                <span asp-validation-for="TeamGoalFor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamGoalAg" class="control-label"></label>
+                <input asp-for="TeamGoalAg" class="form-control" />
+                <span asp-validation-for="TeamGoalAg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamGoalOn" class="control-label"></label>
+                <input asp-for="TeamGoalOn" class="form-control" />
+                <span asp-validation-for="TeamGoalOn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LeagueId" class="control-label"></label>
+                <select asp-for="LeagueId" class ="form-control" asp-items="ViewBag.LeagueId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoachId" class="control-label"></label>
+                <select asp-for="CoachId" class ="form-control" asp-items="ViewBag.CoachId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamImage" class="control-label"></label>
+                <input asp-for="TeamImage" class="form-control" />
+                <span asp-validation-for="TeamImage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
