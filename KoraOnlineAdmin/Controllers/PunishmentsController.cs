@@ -47,7 +47,7 @@ namespace KoraOnlineAdmin.Controllers
         // GET: Punishments/Create
         public IActionResult Create()
         {
-            ViewData["PlayerId"] = new SelectList(_context.Players, "PlayerId", "PlayerId");
+            ViewData["PlayerId"] = new SelectList(_context.Players, "PlayerId", "PlayerName");
             return View();
         }
 
@@ -81,7 +81,7 @@ namespace KoraOnlineAdmin.Controllers
             {
                 return NotFound();
             }
-            ViewData["PlayerId"] = new SelectList(_context.Players, "PlayerId", "PlayerId", punishment.PlayerId);
+            ViewData["PlayerId"] = new SelectList(_context.Players, "PlayerId", "PlayerName", punishment.PlayerId);
             return View(punishment);
         }
 

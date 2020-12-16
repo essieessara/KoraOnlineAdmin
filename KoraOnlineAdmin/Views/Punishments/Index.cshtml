@@ -4,38 +4,41 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
+<h1>Punishments Table</h1>
+<hr />
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create"class="btn btn-primary">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.PunishType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Player)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.PunishType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Player.PlayerId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.PunishId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PunishId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PunishId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PunishType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Player)
+                </th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PunishType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Player.PlayerName)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.PunishId" class="btn btn-primary">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.PunishId"class="btn btn-info">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.PunishId"class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
