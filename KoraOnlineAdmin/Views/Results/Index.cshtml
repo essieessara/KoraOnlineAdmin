@@ -4,62 +4,65 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
+<h1>Results</h1>
+<hr />
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Result1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MRedCard)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MYelCard)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MGoals)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Match)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Team)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Result1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MRedCard)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MYelCard)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MGoals)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Match.MatchId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Team.TeamId)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Result1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MRedCard)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MYelCard)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MGoals)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Match)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Team)
+                </th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Result1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MRedCard)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MYelCard)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MGoals)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Match.MatchId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Team.TeamName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
