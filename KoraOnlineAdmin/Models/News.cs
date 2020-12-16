@@ -21,8 +21,7 @@ namespace KoraOnlineAdmin.Models
         public string NewsTitle { get; set; }
 
         [Column("news_date", TypeName = "date")]
-        [Display(Name = "News Data")]
-        [DataType(DataType.Date)]
+        [Display(Name = "News Data and Time")]
         public DateTime? NewsDate { get; set; }
 
         //this line here not working
