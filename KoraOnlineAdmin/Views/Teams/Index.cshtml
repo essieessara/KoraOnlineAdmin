@@ -4,92 +4,95 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Teams Table</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Add Team</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TeamName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TeamMatchPlayed)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TeamWon)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TeamDraw)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TeamLost)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TeamGoalFor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TeamGoalAg)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TeamGoalOn)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TeamImage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Coach)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.League)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TeamName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TeamMatchPlayed)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TeamWon)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TeamDraw)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TeamLost)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TeamGoalFor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TeamGoalAg)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TeamGoalOn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TeamImage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Coach.CoachId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.League.LeagueId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.TeamId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.TeamId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.TeamId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TeamName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TeamMatchPlayed)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TeamWon)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TeamDraw)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TeamLost)
+                </th>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.TeamGoalFor)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TeamGoalAg)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TeamGoalOn)
+                </th>*@
+                @*<th>
+                    @Html.DisplayNameFor(model => model.TeamImage)
+                </th>*@
+                @*<th>
+                    @Html.DisplayNameFor(model => model.Coach)
+                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.League)
+                </th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TeamName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TeamMatchPlayed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TeamWon)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TeamDraw)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TeamLost)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.TeamGoalFor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TeamGoalAg)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TeamGoalOn)
+                    </td>*@
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.TeamImage)
+                    </td>*@
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.Coach.CoachName)
+                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.League.LeagueName)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.TeamId"class="btn btn-primary">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.TeamId"class="btn btn-info">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.TeamId"class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
