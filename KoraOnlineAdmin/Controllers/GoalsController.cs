@@ -50,8 +50,8 @@ namespace KoraOnlineAdmin.Controllers
         public IActionResult Create()
         {
             ViewData["MatchId"] = new SelectList(_context.Matches, "MatchId", "MatchId");
-            ViewData["PlayerId"] = new SelectList(_context.Players, "PlayerId", "PlayerId");
-            ViewData["TeamId"] = new SelectList(_context.Teams, "TeamId", "TeamId");
+            ViewData["PlayerId"] = new SelectList(_context.Players, "PlayerId", "PlayerName");
+            ViewData["TeamId"] = new SelectList(_context.Teams, "TeamId", "TeamName");
             return View();
         }
 
@@ -88,8 +88,8 @@ namespace KoraOnlineAdmin.Controllers
                 return NotFound();
             }
             ViewData["MatchId"] = new SelectList(_context.Matches, "MatchId", "MatchId", goal.MatchId);
-            ViewData["PlayerId"] = new SelectList(_context.Players, "PlayerId", "PlayerId", goal.PlayerId);
-            ViewData["TeamId"] = new SelectList(_context.Teams, "TeamId", "TeamId", goal.TeamId);
+            ViewData["PlayerId"] = new SelectList(_context.Players, "PlayerId", "PlayerName", goal.PlayerId);
+            ViewData["TeamId"] = new SelectList(_context.Teams, "TeamId", "TeamName", goal.TeamId);
             return View(goal);
         }
 

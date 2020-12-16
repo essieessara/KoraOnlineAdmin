@@ -13,11 +13,18 @@ namespace KoraOnlineAdmin.Models
     {
         [Key]
         [Column("goal_id")]
+        [Display(Name ="Goal Id")]
         public int GoalId { get; set; }
+
+        [Display(Name = "Match Name")]
         [Column("match_id")]
         public int? MatchId { get; set; }
+
+        [Display(Name = "Player Name")]
         [Column("player_id")]
         public int? PlayerId { get; set; }
+
+        [Display(Name = "Team")]
         [Column("team_id")]
         public int? TeamId { get; set; }
 
