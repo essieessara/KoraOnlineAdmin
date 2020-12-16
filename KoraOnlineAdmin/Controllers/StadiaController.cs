@@ -47,7 +47,7 @@ namespace KoraOnlineAdmin.Controllers
         // GET: Stadia/Create
         public IActionResult Create()
         {
-            ViewData["CityId"] = new SelectList(_context.Cities, "CityId", "CityId");
+            ViewData["CityId"] = new SelectList(_context.Cities, "CityId", "CityName");
             return View();
         }
 
@@ -81,7 +81,7 @@ namespace KoraOnlineAdmin.Controllers
             {
                 return NotFound();
             }
-            ViewData["CityId"] = new SelectList(_context.Cities, "CityId", "CityId", stadium.CityId);
+            ViewData["CityId"] = new SelectList(_context.Cities, "CityId", "CityName", stadium.CityId);
             return View(stadium);
         }
 

@@ -19,13 +19,20 @@ namespace KoraOnlineAdmin.Models
 
         [Key]
         [Column("stadium_id")]
+        [Display (Name ="Stadium Id")]
         public int StadiumId { get; set; }
+
         [Column("stadium_name")]
         [StringLength(50)]
+        [Display(Name = "Stadium Name")]
         public string StadiumName { get; set; }
+
         [Column("satdium_capacity")]
+        [Display(Name = "Stadium Capacity")]
         public int? SatdiumCapacity { get; set; }
+
         [Column("city_id")]
+        [Display(Name = "city Name")]
         public int? CityId { get; set; }
 
         [ForeignKey(nameof(CityId))]
