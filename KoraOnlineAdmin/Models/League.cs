@@ -20,11 +20,17 @@ namespace KoraOnlineAdmin.Models
 
         [Key]
         [Column("league_id")]
+        [Display(Name ="League Id")]
         public int LeagueId { get; set; }
+
         [Column("league_name")]
         [StringLength(50)]
+        [Display(Name = "League Name")]
         public string LeagueName { get; set; }
+
         [Column("league_image")]
+        [Display(Name = "League Image")]
+
         public string LeagueImage { get; set; }
 
         [InverseProperty(nameof(Match.League))]
