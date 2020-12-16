@@ -23,6 +23,7 @@ namespace KoraOnlineAdmin.Models
         [StringLength(50)]
         public string CityName { get; set; }
         [Column("country_id")]
+        [Display(Name = "Country Name")]
         public int? CountryId { get; set; }
 
         [ForeignKey(nameof(CountryId))]

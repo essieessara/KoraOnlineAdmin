@@ -47,7 +47,7 @@ namespace KoraOnlineAdmin.Controllers
         // GET: Cities/Create
         public IActionResult Create()
         {
-            ViewData["CountryId"] = new SelectList(_context.Countries, "CountryId", "CountryId");
+            ViewData["CountryId"] = new SelectList(_context.Countries, "CountryId", "CountryName");
             return View();
         }
 
@@ -81,7 +81,7 @@ namespace KoraOnlineAdmin.Controllers
             {
                 return NotFound();
             }
-            ViewData["CountryId"] = new SelectList(_context.Countries, "CountryId", "CountryId", city.CountryId);
+            ViewData["CountryId"] = new SelectList(_context.Countries, "CountryId", "CountryName", city.CountryId);
             return View(city);
         }
 
