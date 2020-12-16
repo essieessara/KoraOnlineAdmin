@@ -47,7 +47,7 @@ namespace KoraOnlineAdmin.Controllers
         // GET: Players/Create
         public IActionResult Create()
         {
-            ViewData["TeamId"] = new SelectList(_context.Teams, "TeamId", "TeamId");
+            ViewData["TeamId"] = new SelectList(_context.Teams, "TeamId", "TeamName");
             return View();
         }
 
@@ -81,7 +81,7 @@ namespace KoraOnlineAdmin.Controllers
             {
                 return NotFound();
             }
-            ViewData["TeamId"] = new SelectList(_context.Teams, "TeamId", "TeamId", player.TeamId);
+            ViewData["TeamId"] = new SelectList(_context.Teams, "TeamId", "TeamName", player.TeamId);
             return View(player);
         }
 

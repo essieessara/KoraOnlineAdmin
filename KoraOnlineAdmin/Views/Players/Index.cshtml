@@ -4,56 +4,59 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Player List</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create"class="btn btn-primary">Add Player</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.PlayerName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PlayerPosition)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PlayerGoals)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PlayerImage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Team)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlayerName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlayerPosition)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlayerGoals)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlayerImage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Team.TeamId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.PlayerId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PlayerId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PlayerId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PlayerName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PlayerPosition)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PlayerGoals)
+                </th>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.PlayerImage)
+                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.Team)
+                </th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PlayerName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PlayerPosition)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PlayerGoals)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.PlayerImage)
+                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Team.TeamName)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.PlayerId" class="btn btn-primary">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.PlayerId"class="btn btn-info">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.PlayerId"class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

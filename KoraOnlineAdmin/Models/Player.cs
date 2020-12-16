@@ -20,18 +20,29 @@ namespace KoraOnlineAdmin.Models
 
         [Key]
         [Column("player_id")]
+        [Display (Name ="Player Id")]
         public int PlayerId { get; set; }
+
         [Column("player_name")]
         [StringLength(50)]
+        [Display(Name = "Player Name")]
         public string PlayerName { get; set; }
+
         [Column("player_position")]
         [StringLength(50)]
+        [Display(Name = "Player Position")]
         public string PlayerPosition { get; set; }
+
         [Column("team_id")]
+        [Display(Name = "Team Name")]
         public int? TeamId { get; set; }
+
         [Column("player_goals")]
+        [Display(Name = "#Goals")]
         public int? PlayerGoals { get; set; }
+
         [Column("player_image")]
+        [Display(Name = "Player Image")]
         public string PlayerImage { get; set; }
 
         [ForeignKey(nameof(TeamId))]
