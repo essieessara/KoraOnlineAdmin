@@ -20,30 +20,50 @@ namespace KoraOnlineAdmin.Models
 
         [Key]
         [Column("match_id")]
+        [Display(Name ="Match ID")]
         public int MatchId { get; set; }
+
+        [Display(Name = "Match DateTime")]
         [Column("match_date", TypeName = "date")]
         public DateTime? MatchDate { get; set; }
+
         [Column("match_time")]
         public TimeSpan? MatchTime { get; set; }
+
+        [Display(Name = "Match Status")]
         [Column("match_status")]
         [StringLength(50)]
         public string MatchStatus { get; set; }
+
+        [Display(Name = "Staduim Name")]
         [Column("staduim_id")]
         public int? StaduimId { get; set; }
+
+        [Display(Name = "League")]
         [Column("league_id")]
         public int? LeagueId { get; set; }
+
+        [Display(Name = "Team #1")]
         [Column("match_team_name1")]
         [StringLength(50)]
         public string MatchTeamName1 { get; set; }
+
+        [Display(Name = "Team #2")]
         [Column("match_team_name2")]
         [StringLength(50)]
         public string MatchTeamName2 { get; set; }
+
+        [Display(Name = "Week")]
         [Column("match_week")]
         [StringLength(50)]
         public string MatchWeek { get; set; }
+
+        [Display(Name = "Team #1 Goals")]
         [Column("match_team_result1")]
         [StringLength(50)]
         public string MatchTeamResult1 { get; set; }
+
+        [Display(Name = "Team #2 Goals")]
         [Column("match_team_result2")]
         [StringLength(50)]
         public string MatchTeamResult2 { get; set; }

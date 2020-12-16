@@ -4,86 +4,89 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
+<h1>Kora Online Matches List</h1>
+<hr />
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.MatchDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MatchTime)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MatchStatus)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MatchTeamName1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MatchTeamName2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MatchWeek)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MatchTeamResult1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MatchTeamResult2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.League)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Staduim)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.MatchDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MatchTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MatchStatus)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MatchTeamName1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MatchTeamName2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MatchWeek)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MatchTeamResult1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MatchTeamResult2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.League.LeagueId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Staduim.StadiumId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.MatchId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.MatchId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.MatchId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.MatchDate)
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.MatchTime)
+                    </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.MatchStatus)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MatchTeamName1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MatchTeamName2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MatchWeek)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MatchTeamResult1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MatchTeamResult2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.League)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Staduim)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MatchDate)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.MatchTime)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MatchStatus)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MatchTeamName1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MatchTeamName2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MatchWeek)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MatchTeamResult1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MatchTeamResult2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.League.LeagueName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Staduim.StadiumName)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.MatchId" class="btn btn-primary">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.MatchId" class="btn btn-info">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.MatchId" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

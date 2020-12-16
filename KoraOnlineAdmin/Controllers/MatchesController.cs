@@ -48,8 +48,8 @@ namespace KoraOnlineAdmin.Controllers
         // GET: Matches/Create
         public IActionResult Create()
         {
-            ViewData["LeagueId"] = new SelectList(_context.Leagues, "LeagueId", "LeagueId");
-            ViewData["StaduimId"] = new SelectList(_context.Stadia, "StadiumId", "StadiumId");
+            ViewData["LeagueId"] = new SelectList(_context.Leagues, "LeagueId", "LeagueName");
+            ViewData["StaduimId"] = new SelectList(_context.Stadia, "StadiumId", "StadiumName");
             return View();
         }
 
@@ -84,8 +84,8 @@ namespace KoraOnlineAdmin.Controllers
             {
                 return NotFound();
             }
-            ViewData["LeagueId"] = new SelectList(_context.Leagues, "LeagueId", "LeagueId", match.LeagueId);
-            ViewData["StaduimId"] = new SelectList(_context.Stadia, "StadiumId", "StadiumId", match.StaduimId);
+            ViewData["LeagueId"] = new SelectList(_context.Leagues, "LeagueId", "LeagueName", match.LeagueId);
+            ViewData["StaduimId"] = new SelectList(_context.Stadia, "StadiumId", "StadiumName", match.StaduimId);
             return View(match);
         }
 
