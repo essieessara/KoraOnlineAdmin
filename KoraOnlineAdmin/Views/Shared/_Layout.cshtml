@@ -9,7 +9,8 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3">
+        
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">KoraOnline</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -22,31 +23,31 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>*@
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="News" asp-action="Index">News</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="News" asp-action="Index">News</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Matches" asp-action="Index">Matches</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Matches" asp-action="Index">Matches</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Players" asp-action="Index">Players</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Players" asp-action="Index">Players</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Teams" asp-action="Index">Teams</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Teams" asp-action="Index">Teams</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Leagues" asp-action="Index">Leagues</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Leagues" asp-action="Index">Leagues</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Cities" asp-action="Index">Cities</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Cities" asp-action="Index">Cities</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Coaches" asp-action="Index">Coaches</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Coaches" asp-action="Index">Coaches</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Goals" asp-action="Index">Goals</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Goals" asp-action="Index">Goals</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Categories" asp-action="Index">Category</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Categories" asp-action="Index">Category</a>
                         </li>
                         @*<li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Countries" asp-action="Index">Countries</a>
@@ -63,9 +64,10 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted bg-dark">
+    <footer class="border-top footer text-muted bg-dark border-bottom box-shadow mb-3">
+       
         <div class="container">
-            &copy; 2020 - KoraOnlineAdmin - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2020 - KoraOnlineAdmin - <a asp-area="" asp-controller="Home" asp-action="Privacy" class="text-light">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
