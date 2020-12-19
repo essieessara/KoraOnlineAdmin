@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 
 #nullable disable
@@ -9,6 +10,8 @@ using Microsoft.EntityFrameworkCore;
 namespace KoraOnlineAdmin.Models
 {
     [Table("category")]
+
+
     public partial class Category
     {
         public Category()

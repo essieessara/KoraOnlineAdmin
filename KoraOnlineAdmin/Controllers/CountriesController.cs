@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using KoraOnlineAdmin.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace KoraOnlineAdmin.Controllers
 {
+    [Authorize(Roles = "Main_admin,Other_admin")]
     public class CountriesController : Controller
     {
         private readonly KoraOnline _context;
