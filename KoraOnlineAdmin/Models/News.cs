@@ -34,7 +34,7 @@ namespace KoraOnlineAdmin.Models
         public int? NewsCategoryId { get; set; }
 
         [Column("news_image")]
-        [Display(Name = "News Image")]
+        [Display(Name = "News Image/Video")]
         public string NewsImage { get; set; }
 
         [Column("news_writer")]
