@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace KoraOnlineAdmin.Controllers
 {
-    [Authorize(Roles = "Main_admin,Other_admin")]
+   
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
