@@ -23,7 +23,7 @@ namespace KoraOnlineAdmin.Models
         [Display(Name ="Match ID")]
         public int MatchId { get; set; }
 
-        [Display(Name = "Match DateTime")]
+        [Display(Name = "Match Date and Time")]
         [Column("match_date", TypeName = "date")]
         public DateTime? MatchDate { get; set; }
 
@@ -58,12 +58,12 @@ namespace KoraOnlineAdmin.Models
         [StringLength(50)]
         public string MatchWeek { get; set; }
 
-        [Display(Name = "Team #1 Goals")]
+        [Display(Name = "Team #1 Logo")]
         [Column("match_team_result1")]
         [StringLength(50)]
         public string MatchTeamResult1 { get; set; }
 
-        [Display(Name = "Team #2 Goals")]
+        [Display(Name = "Team #2 Logo")]
         [Column("match_team_result2")]
         [StringLength(50)]
         public string MatchTeamResult2 { get; set; }
